@@ -1,5 +1,5 @@
 ﻿---
-title: Polygon intersection detection (2D)
+title: Polygon intersection detection
 ---
 
 > Author: Hilal
