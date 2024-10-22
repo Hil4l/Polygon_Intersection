@@ -2,3 +2,10 @@
 ---
 
 @import "{{ site.theme }}";
+
+.page-header {
+  background-color: #f0f0f0; /* Change the background color */
+  color: #333; /* Change the text color */
+  padding: 10px 0; /* Adjust padding to make the header thinner */
+  text-align: center;
+}
