@@ -3,9 +3,9 @@
 
 @import "{{ site.theme }}";
 
-.page-header {
+header {
   // color: #f0f0f0; /* Change the text color */
   padding: 10px 0; /* Adjust padding to make the header thinner */
-  text-align: center;
-  background-image: linear-gradient(120deg, #002080, #333333);  /*green to grey gradient*/
+  // text-align: center;
+  // background-image: linear-gradient(120deg, #002080, #333333);  /*green to grey gradient*/
 }
