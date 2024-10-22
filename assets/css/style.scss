@@ -11,15 +11,15 @@
   background-image: linear-gradient(120deg, #002080, #333333);  /*green to grey gradient*/
 }
 
-h2, h3, h4, h5, h6 {
-  color: #002080; /* Dark blue (or match the color of your header text) */
+body h2, body h3, body h4, body h5, body h6 {
+  color: #00134d; /* Dark blue for headers */
 }
 
 /* Optional: Customize the font weight or size if needed */
-h2 {
+body h2 {
   font-weight: 700; /* Bold for section titles */
 }
 
-h3 {
+body h3 {
   font-weight: 600; /* Slightly less bold for subsections */
 }
