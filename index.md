@@ -61,8 +61,10 @@ After prunning update Tp or Tq, check holding invariants with Tp/Tq intersection
 
 **Separation invariant step**
 
-Define separating line l (exists)
+Define separating line l (exists).
+
 Consider the 2 closed halfplanes l- and l+ supported by l such that TP ⊆ l-.
+
 Consider the 2 neighbours nv and nvp of v along ∂P.
 
 + both neighbours in l-
@@ -75,7 +77,8 @@ Then l separates P from Tq (P convexity) and Q ⊆ TQ so l separates P from Q.
 
 The removal of the vertices of TP split ∂P into three polygonal chains, only one, let cv, intersects l+, we consider its both endpoints v (by construction) and let u the other endpoint.
 
-Because `Q ⊆ l+, only cv vertices can define an intersection with Q` (other points not in the same halfplane - separated). Therefore, we can prune V∗(P) by removing every vertex of P that does not lie on cv and maintain the correctness invariant.
+Because `Q ⊆ l+, only cv vertices can define an intersection with Q` (other points not in the same halfplane - separated).
+Therefore, we can prune V∗(P) by removing every vertex of P that does not lie on cv and maintain the correctness invariant.
 
 <!-- **nv and nvp both in l+ image** **nv in l+ and nvp in l- image** -->
 
@@ -86,7 +89,7 @@ TODO
 ### Separation invariant applet
 
 <iframe
-  src="https://codesandbox.io/embed/convex-hull-vertices-qhhzs3?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+  src="https://codesandbox.io/embed/orientation-determinant-sdvltg?fontsize=14&hidenavigation=1&theme=dark&view=preview"
   style="width: 100%; height: 500px; border: 0; border-radius: 4px; overflow: hidden;"
   title="CodeSandbox Applet"
   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
