@@ -41,19 +41,17 @@ Throughout the algorithm, we will interact with the polygons through 2 structure
 
 + Tq: the edge hull of three edges of Q (triangle - possibly unbounded), such that their removal split ∂Q into 3 chains of at most ⌈(m−3)/3⌉ edges.
 
-<center><img src="assets/images/Tp_and_Tq.png" width="400" height="200" /><br><span>Figure 1: Tp and Tq</span></center>
+<center><img src="assets/images/Tp_and_Tq.png" width="400" height="250" /><br><span>Figure 1: Tp and Tq</span></center>
 
 (TP ⊆ P while Q ⊆ TQ)
 
 ### Invariants
 
-#### Correctness
++ **Correctness** invariant: 
 
-#### Separation
-The separation invariant states that **there is a line l that separates TP from TQ such that l is tangent to TP at a vertex v**.
++ **Separation** invariant: there is a line l that separates TP from TQ such that l is tangent to TP at a vertex v.
 
-#### Intersection
-The intersection invariant states that **there is a point in the intersection between TP and TQ**.
++ **Intersection** invariant: there is a point in the intersection between TP and TQ.
 
 ### Algorithm
 
@@ -61,26 +59,27 @@ Alternate between pruning steps depending on which invariant holds.
 After prunning update Tp or Tq, check holding invariants with Tp/Tq intersection test, repeat.
 
 
-#### Separation invariant step
+**Separation invariant step**
 
 Define separating line l (exists)
 Consider the 2 closed halfplanes l- and l+ supported by l such that TP ⊆ l-.
 Consider the 2 neighbours nv and nvp of v along ∂P.
 
 + both neighbours in l-
+
 Then l separates P from Tq (P convexity) and Q ⊆ TQ so l separates P from Q.
 
 + neighbours in different halfplanes
+
 (nv in l+ / nvp in l-)
 
 The removal of the vertices of TP split ∂P into three polygonal chains, only one, let cv, intersects l+, we consider its both endpoints v (by construction) and let u the other endpoint.
 
-**Because Q ⊆ l+, only cv vertices can define an intersection with Q** (other points not in the same halfplane - separated). Therefore, we can prune V∗(P) by removing every vertex of P that does not lie on cv and maintain the correctness invariant.
+Because `Q ⊆ l+, only cv vertices can define an intersection with Q` (other points not in the same halfplane - separated). Therefore, we can prune V∗(P) by removing every vertex of P that does not lie on cv and maintain the correctness invariant.
 
-**nv and nvp both in l+ image**
-**nv in l+ and nvp in l- image**
+<!-- **nv and nvp both in l+ image** **nv in l+ and nvp in l- image** -->
 
-#### Intersection invariant step
+**Intersection invariant step**
 
 TODO
 
