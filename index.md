@@ -41,7 +41,7 @@ Throughout the algorithm, we will interact with the polygons through 2 structure
 
 + Tq: the edge hull of three edges of Q (triangle - possibly unbounded), such that their removal split ∂Q into 3 chains of at most ⌈(m−3)/3⌉ edges.
 
-**Include image**
+<center><img src="assets/images/Tp_and_Tq.png" width="400" height="200" /><br><span>Figure 1: Tp and Tq</span></center>
 
 (TP ⊆ P while Q ⊆ TQ)
 
