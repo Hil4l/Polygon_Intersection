@@ -57,27 +57,28 @@ Alternate between pruning steps depending on which invariant holds, maintaining 
 
 ### Separation invariant step
 
-Define separating line l (exists).
+1) Define separating line l (exists).
 
-Consider the 2 closed halfplanes l- and l+ supported by l such that TP ⊆ l-.
+2) Consider the 2 closed halfplanes l- and l+ supported by l such that TP ⊆ l-.
 
-Consider the 2 neighbours nv and nvp of v along ∂P.
+3) Consider the 2 neighbours nv and nvp of v along ∂P.
 
 + **both neighbours in l-**
 
-<center><img src="assets/images/separation_case2.png" width="350" height="350" /><br><span>Figure 2: separation invariant step: case 1</span></center>
-
-Then l separates P from Tq (P convexity) and Q ⊆ TQ so l separates P from Q.
+4) l separates P from Tq (P convexity) and Q ⊆ TQ so `l separates P from Q`.
 
 + **neighbours in different halfplanes**
 
-<center><img src="assets/images/separation_case1.png" width="350" height="350" /><br><span>Figure 3: separation invariant step: case 2</span></center>
-
-The removal of the vertices of TP split ∂P into three polygonal chains, only one, let cv, intersects l+, we consider its both endpoints v (by construction) and let u the other endpoint.
+4) The removal of the vertices of TP split ∂P into three polygonal chains, only one, let cv, intersects l+, we consider its both endpoints v (by construction) and let u the other one.
 
 Because `Q ⊆ l+, only cv vertices can define an intersection with Q` (other points not in the same halfplane - separated).
 Therefore, we can prune V∗(P) by removing every vertex of P that does not lie on cv and maintain the correctness invariant.
 
+5) Redefine Tp with (v, u, m), m the vertex-median of cv.
+
+6) Test Tp and Tq for intersection and perfrom corresponding invariant step.
+
+<center><img src="assets/images/separation_cases.png" width="350" height="350" /><br><span>Figure 2: separation invariant step 2 cases</span></center>
 
 ### Intersection invariant step
 
