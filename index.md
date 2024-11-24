@@ -63,7 +63,8 @@ Alternate between pruning steps depending on which invariant holds, maintaining 
 
 3) Consider the 2 neighbours nv and nvp of v along ∂P.
 
-<center><img src="assets/images/separation_cases.png" width="600" height="350" /><br><span>Figure 2: separation invariant step 2 cases</span></center>
+<center><img src="assets/images/separation_cases.png" width="650" height="350" /><br><span>Figure 2: separation invariant step 2 cases</span></center>
+
 
 + **both neighbours in l-**
 
