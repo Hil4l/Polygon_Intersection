@@ -63,6 +63,8 @@ Alternate between pruning steps depending on which invariant holds, maintaining 
 
 3) Consider the 2 neighbours nv and nvp of v along ∂P.
 
+<center><img src="assets/images/separation_cases.png" width="600" height="350" /><br><span>Figure 2: separation invariant step 2 cases</span></center>
+
 + **both neighbours in l-**
 
 4) l separates P from Tq (P convexity) and Q ⊆ TQ so `l separates P from Q`.
@@ -77,8 +79,6 @@ Therefore, we can prune V∗(P) by removing every vertex of P that does not lie 
 5) Redefine Tp with (v, u, m), m the vertex-median of cv.
 
 6) Test Tp and Tq for intersection and perfrom corresponding invariant step.
-
-<center><img src="assets/images/separation_cases.png" width="350" height="350" /><br><span>Figure 2: separation invariant step 2 cases</span></center>
 
 ### Intersection invariant step
 
