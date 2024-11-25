@@ -73,8 +73,8 @@ Alternate between pruning steps depending on which invariant holds, maintaining 
 
 4) The removal of the vertices of TP split ∂P into three polygonal chains, only one, let cv, intersects l+, we consider its both endpoints v (by construction) and let u the other one.
 
-Because `Q ⊆ l+, only cv vertices can define an intersection with Q` (other points not in the same halfplane - separated).
-Therefore, we can prune V∗(P) by removing every vertex of P that does not lie on cv and maintain the correctness invariant.
+Because Q ⊆ l+, only cv vertices can define an intersection with Q (other points not in the same halfplane - separated).
+Therefore, we can `prune V∗(P) by removing every vertex of P that does not lie on cv and maintain the correctness invariant`.
 
 5) Redefine Tp with (v, u, m), m the vertex-median of cv.
 
@@ -82,7 +82,29 @@ Therefore, we can prune V∗(P) by removing every vertex of P that does not lie 
 
 ### Intersection invariant step
 
-TODO
+Consider (e1, e2, e3) the 3 edges whose edge hull defines TQ.
+
++	**$T_p$ intersects ch($e_1, e_2, e_3$)**
+
+	$ch(e_1, e_2, e_3) \subseteq Q$ so ==P and Q intersect==.
+
++ **$T_p$ dont intersects ch($e_1, e_2, e_3$)**
+
+	+ $T_q \backslash ch(e_1, e_2, e_3)$ forms 3 disjoint connected components, $T_p$ intersects exactly one of them, let it be the one bounded by $(e_1,e_2)$ and let $x \in \partial T_q$ such an intersecting point.
+
+	+ Let $C$ the polygonal chain that connects $e_1$ with $e_2$ along $\partial Q$ such that $C$ passes through $e_3$.
+
+	+ If $P$ and $Q$ intersect, we only need to consider the edges on $\partial Q \backslash C$,
+
+	Notice that if $P$ intersects $C$ at a point $y$, then the edge $xy \subseteq Q$. Because x and y lie in two disjoint connected components of TQ \ ch(e1, e2, e3), the edge xy also intersects ∂Q at another point lying on ∂Q \ C. Therefore, an intersection between P and Q will still be identified even if we ignore every edge on C. 
+
+	Therefore, we can ==prune $E^∗(P)$ by removing every edge along $C$ and maintain the correctness invariant==.
+
+	+ Redefine $T_q$ as the edge hull of $(e_1, e_2, e_m)$, $e_m$ the edge-median of $\partial Q \backslash C$ edges.
+
+	+ Test $T_p$ and $T_q$ for intersection and perfrom corresponding invariant step.
+
+**TODO:** add images and finish second case explanations
 
 ### Separation invariant applet
 
