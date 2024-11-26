@@ -86,7 +86,7 @@ Consider (e1, e2, e3) the 3 edges whose edge hull defines Tq.
 
 +	**Tp intersects ch(e1, e2, e3)**
 
-	ch(e1, e2, e3) ⊆ Q so ==P and Q intersect==.
+	ch(e1, e2, e3) ⊆ Q so `P and Q intersect`.
 
 +	**Tp dont intersects ch(e1, e2, e3)**
 
@@ -98,13 +98,13 @@ Consider (e1, e2, e3) the 3 edges whose edge hull defines Tq.
 
 	If P intersects C at a point y, x and y lies in 2 different disjoint connected components of TQ/ch(e1,e2,e3), so xy intersects ∂Q at anpother point in ∂Q/C, so any intersection between P and Q through C also involves an intersction through ∂Q/C.
 
-	Therefore, we can ==prune E∗(P) by removing every edge along C and maintain the correctness invariant==.
+	Therefore, we can `prune E∗(P) by removing every edge along C and maintain the correctness invariant`.
 
 	+ Redefine T_q as the edge hull of (e1, e2, em), em the edge-median of ∂Q \ C edges.
 
 	+ Test Tp and Tq for intersection and perfrom corresponding invariant step.
 
-<center><img src="assets/images/intersection_cases.png" width="700" height="350" /><br><span>Figure 3: intersection invariant step 2 cases</span></center>
+<center><img src="assets/images/intersection_cases.png" width="800" height="300" /><br><span>Figure 3: intersection invariant step 2 cases</span></center>
 
 ### Separation invariant applet
 
