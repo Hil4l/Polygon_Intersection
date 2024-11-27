@@ -5,6 +5,8 @@ title: Polygon intersection detection
 > Author: RACHIK Hilal, KLEIJKERS Jean-Philippe
 > 
 > Date: October 2024
+>
+> [Github](https://github.com/Hil4l/Polygon_Intersection) 
 
 ## Introduction
 
@@ -296,4 +298,5 @@ Overall complexity is `O(log(|P|) + log(|Q|))`
 
 ## References
 [1] [Barba, Luis, and Stefan Langerman. "Optimal detection of intersections between convex polyhedra." Proceedings of the Twenty-Sixth Annual ACM-SIAM Symposium on Discrete Algorithms. Society for Industrial and Applied Mathematics, 2014.](https://arxiv.org/abs/1312.1001)
+
 [2] [B. Chazelle and D. P. Dobkin. Intersection of Convex Objects in Two and Three Dimensions.1–27, January 1987.](https://doi.org/10.1145/7531.24036)
