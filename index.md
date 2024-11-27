@@ -110,14 +110,14 @@ The Point F (respectively H)  is  chosen such that vi+1  is on the segment(v1, F
 
 ##### Case 1
 If G and F are on the path x then we keep:   
-&nbsp;&nbsp;&nbsp;Lv = {v1, v2, ..., vi+1,vn}.  
-Else if G and F are on the path y then we keep:
-&nbsp;&nbsp;&nbsp;Lv = {vi, vi, ..., vn}.  
-For Lw,it is the opposite.  
-If G and F are on the path x then we keep:  
-&nbsp;&nbsp;&nbsp;Lw = {w1, wj+1, ..., wn}.  
-Else if G and F are on the path y then we keep:  
-&nbsp;&nbsp;&nbsp;Lw = {w1, w2, ..., wj+1,wn}.  
+&nbsp;&nbsp;&nbsp;Lv = {v1, v2, ..., vi+1,vn}.<br>
+Else if G and F are on the path y then we keep:<br> 
+&nbsp;&nbsp;&nbsp;Lv = {vi, vi, ..., vn}.<br>
+For Lw,it is the opposite.<br>
+If G and F are on the path x then we keep:<br>
+&nbsp;&nbsp;&nbsp;Lw = {w1, wj+1, ..., wn}.<br>
+Else if G and F are on the path y then we keep:<br>
+&nbsp;&nbsp;&nbsp;Lw = {w1, w2, ..., wj+1,wn}.<br>
 <center>
   <img src="assets/images/4a.png" width="375" height="">
   <br>
@@ -136,17 +136,17 @@ If F < E and H < G then:
 </center>
 
 ##### Case 3
-Let's definie I be the intersection of segment(G,F) and segment(H,E).  
-If G < H and E < F then:  
-&nbsp;&nbsp;&nbsp;if vi is on the segment(G,I) then we keep:  
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lv = {v1, vi, ..., vn}.  
-&nbsp;&nbsp;&nbsp;if wj+1 is on the segment(H,I) then we keep:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lw = {w1, w2, ..., wj+1,wn}.  
-If H < G and F  < E then:  
-&nbsp;&nbsp;&nbsp;if vi+1 is on the segment(F,I) then we keep:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lv = {v1, v2, ..., vi+1,vn}.  
-&nbsp;&nbsp;&nbsp;if wj is on the segment(E,I) then we keep:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lw = {w1, wj, ..., wn}.  
+Let's definie I be the intersection of segment(G,F) and segment(H,E).<br>
+If G < H and E < F then:<br>
+&nbsp;&nbsp;&nbsp;if vi is on the segment(G,I) then we keep:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lv = {v1, vi, ..., vn}.<br>
+&nbsp;&nbsp;&nbsp;if wj+1 is on the segment(H,I) then we keep:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lw = {w1, w2, ..., wj+1,wn}.<br>
+If H < G and F  < E then:<br>
+&nbsp;&nbsp;&nbsp;if vi+1 is on the segment(F,I) then we keep:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lv = {v1, v2, ..., vi+1,vn}.<br>
+&nbsp;&nbsp;&nbsp;if wj is on the segment(E,I) then we keep:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lw = {w1, wj, ..., wn}.<br>
 
 <center>
   <img src="assets/images/4c.png" width="375" height="">
@@ -155,8 +155,8 @@ If H < G and F  < E then:
 </center>
 
 ##### Case 4
-If segment(A,vi) and segment(B,wj) intersect then:
-&nbsp;&nbsp;&nbsp;We return true because there is a collision between the two polygons.
+If segment(A,vi) and segment(B,wj) intersect then:<br>
+&nbsp;&nbsp;&nbsp;We return true because there is a collision between the two polygons.<br>
 <center>
   <img src="assets/images/4d.png" width="375" height="">
   <br>
@@ -164,13 +164,13 @@ If segment(A,vi) and segment(B,wj) intersect then:
 </center>
 
 ##### Case 5
-Let's define R the intersection of segment(A,vi) and segment(H,E).  
-If wj is on the segment(E,R) then we keep:  
-&nbsp;&nbsp;&nbsp;Lv= {v1, vi, ..., vn}.  
-&nbsp;&nbsp;&nbsp;Lw = {w1, wi, ..., wn}.  
-Else
-&nbsp;&nbsp;&nbsp;Lv= {v1, v2, ..., vi+1,vn}.  
-&nbsp;&nbsp;&nbsp;Lw = {w1, w2, ..., wj+1,wn}.  
+Let's define R the intersection of segment(A,vi) and segment(H,E).<br>
+If wj is on the segment(E,R) then we keep:<br>
+&nbsp;&nbsp;&nbsp;Lv= {v1, vi, ..., vn}.<br>
+&nbsp;&nbsp;&nbsp;Lw = {w1, wi, ..., wn}.<br>
+Else<br>
+&nbsp;&nbsp;&nbsp;Lv= {v1, v2, ..., vi+1,vn}.<br>
+&nbsp;&nbsp;&nbsp;Lw = {w1, w2, ..., wj+1,wn}.<br>
 <center>
   <img src="assets/images/4e.png" width="375" height="">
   <br>
