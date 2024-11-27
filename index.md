@@ -126,7 +126,7 @@ So the number of separation invariant step is bounded by O(log |P|).
 Therefore, after intersection invariant step, a constant fraction of E∗(Q) is prunned, since only ∂Q \ C is retained.
 So the number of intersection invariant step is bounded by O(log |Q|).
 
-overall complexity is **O(log(|P|) + log(|Q|))**
+Overall complexity is `O(log(|P|) + log(|Q|))`
 
 ## References
 [1] [Barba, Luis, and Stefan Langerman. "Optimal detection of intersections between convex polyhedra." Proceedings of the Twenty-Sixth Annual ACM-SIAM Symposium on Discrete Algorithms. Society for Industrial and Applied Mathematics, 2014.](https://arxiv.org/abs/1312.1001)
