@@ -41,9 +41,9 @@ Before defining IGG, we need to define IGL. Because IGG uses IGL several times t
 #### **IGL**
 IGL takes as input a convex polygon X and a line  L , and returns the two edges of the polygon that are intersected by  L . To find these edges, we use the function  h( pi, L, p1) , which computes the distance between the point   pi  and the line  L , multiplied by   sign( pi, L, p1) . The   sign  function returns 1 if the point pi is on the same side as  p1 , and -1 if it is on the opposite side.
 
-Let’s define  w  as the vertex that minimizes  h( pi, L, p1) . If  h(w, L, p1)  is negative, this indicates that the line  L  passes through the polygon  X . Because the function  h  is bimodal, w can be found  a time complexity of O(log(|X|)) using Fibonacci search,were |X| is the number of vertices of the polygon X.
+Let’s define  w  as the vertex that minimizes  h( pi, L, p1) . If  h(w, L, p1)  is negative, this indicates that the line  L  passes through the polygon  X . Because the function  h  is bimodal, w can be found  a time complexity of O(log(\|X\|)) using Fibonacci search,were \|X\| is the number of vertices of the polygon X.
 
-Once  w  is identified, we can determine the edges intersected by  L . First, we find the transition from positive to negative values of  h  within the polygonal chain  [p1, w]  using binary search, and the transition from negative to positive values of  h  within the polygonal chain  [w, p1]  by also using binary search. These two transitions correspond to the two edges of the polygon that are intersected by the line  L. Because the complexity of binary search is also O(log(|X|)), the overall complexity of IGL is O(log(|X|)).
+Once  w  is identified, we can determine the edges intersected by  L . First, we find the transition from positive to negative values of  h  within the polygonal chain  [p1, w]  using binary search, and the transition from negative to positive values of  h  within the polygonal chain  [w, p1]  by also using binary search. These two transitions correspond to the two edges of the polygon that are intersected by the line  L. Because the complexity of binary search is also O(log(\|X\|)), the overall complexity of IGL is O(log(\|X\|)).
 <center><img src="assets/images/IGL.png" width="400" height="350" /><br><span>Example of the function h applied on every vertice of the polygon.</span></center>
 
 
@@ -62,7 +62,7 @@ Once  w  is identified, we can determine the edges intersected by  L . First, we
 
 
 ### **Find the pencil for polygon P and Q**
-To find the pencil of a polygon P, we need to define a point q which sits inside of the polygon Q,we defined it as the center of mass of the polygon Q. If q sits inside of P, then we can stop the algorithm and return true. Using binary search,we can find if q sits inside of P or not in O(log(|P|)) time complexity.
+To find the pencil of a polygon P, we need to define a point q which sits inside of the polygon Q,we defined it as the center of mass of the polygon Q. If q sits inside of P, then we can stop the algorithm and return true. Using binary search,we can find if q sits inside of P or not in O(log(\|P\|)) time complexity.
 If q is not sit inside of P.We define a pivot p1 as one of the vertices of P and we draw a line that passes through p1 and q.
  Using IGL with as arguments the polygon Q and the line(p1,q), we can find  2 edges and thus the two points of intersection, a and b. If p1  lies on  the segment AB,it means that p1 that P and Q are colliding.
 <center><img src="assets/images/p1OnAB.png" width="400" height="350" /><br><span>Example of p1 being on the segment AB.</span></center>
@@ -184,7 +184,7 @@ The time complexity of the algorithm is O(log(n)) where n is the sum of the numb
 
 ###  **Check for intersection between L of P and L of Q**
 After recursion if no true or false is returned, we have to check if the two sets of vertices intersect.
-So with LW and LV  beeing reduced, we can create a list of edges for each set, corresponding to the enumeration of the vertices within it. Next, we check if the two lists of edges intersect. If they do, we return true, otherwise we return false. The worst-case time complexity of this step is O(|Lw| * |Lv|), knowing that atleast one of the two has a size smaller than 6.
+So with LW and LV  beeing reduced, we can create a list of edges for each set, corresponding to the enumeration of the vertices within it. Next, we check if the two lists of edges intersect. If they do, we return true, otherwise we return false. The worst-case time complexity of this step is O(\|Lw\| * \|Lv\|), knowing that atleast one of the two has a size smaller than 6.
 <center><img src="assets/images/reduceSetL.png" width="500" height="" ><br><span>Visual representation of the reduce L sets</span></center>
 
 ## Algorithm 2 (RACHIK Hilal)
