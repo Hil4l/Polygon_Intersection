@@ -10,7 +10,7 @@ title: Polygon intersection detection
 
 problem: determine if two convex polygons P and Q intersect.
 
-## Algorithm 1
+## Algorithm 1 (KLEIJKERS Jean-Philippe)
 
 #### Chazelle and Dobkin algorithm
 <iframe
@@ -21,7 +21,7 @@ problem: determine if two convex polygons P and Q intersect.
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-## Algorithm 2
+## Algorithm 2 (RACHIK Hilal)
 
 Barba and Langerman algorithm, aims to show an alternate and hopefully simpler algorithm to solve this problem.
 
@@ -63,7 +63,7 @@ Consider the 2 closed halfplanes l- and l+ supported by l such that TP ⊆ l-.
 
 Consider the 2 neighbours nv and nvp of v along ∂P.
 
-<center><img src="assets/images/separation_cases.png" width="700" height="350" /><br><span>Figure 2: separation invariant step 2 cases</span></center>
+<center><img src="assets/images/separation_cases.png" width="700" height="400" /><br><span>Figure 2: separation invariant step 2 cases</span></center>
 
 + **both neighbours in l-**
 
@@ -117,11 +117,16 @@ Consider (e1, e2, e3) the 3 edges whose edge hull defines Tq.
 ></iframe>
 
 ### Complexity
-O(log(|P|) + log(Q))
 
-### 3D algorithm link
++ Each time Tp is redefined, we roughly splits the remaining vertices of V*(P) along ∂P into 2 equal lenght chains through the vertex median (v and u are adjacent by construction).
+Therefore, after each separation invariant step, a constant fraction of V∗(P) is prunned since only one chain is retained (cv).
+So the number of separation invariant step is bounded by O(log |P|).
 
-provides some intuition for the higher-dimension algorithms presented in subsequent sections
++ Each time Tq is redefined, we roughly split the remaining edges of E∗(Q) into equal pieces, through the edge median (e1 and e2 adjacent by construction).
+Therefore, after intersection invariant step, a constant fraction of E∗(Q) is prunned, since only ∂Q \ C is retained.
+So the number of intersection invariant step is bounded by O(log |Q|).
+
+overall complexity is **O(log(|P|) + log(|Q|))**
 
 ## References
 [1] [Barba, Luis, and Stefan Langerman. "Optimal detection of intersections between convex polyhedra." Proceedings of the Twenty-Sixth Annual ACM-SIAM Symposium on Discrete Algorithms. Society for Industrial and Applied Mathematics, 2014.](https://arxiv.org/abs/1312.1001)
