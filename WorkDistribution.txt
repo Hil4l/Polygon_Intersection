@@ -2,4 +2,6 @@ Kleijkers Jean-Philippe
 I worked on  the  algorithm:
 Intersection of Convex Objects in Two and Three Dimensions, developed by B. Chazelle and D. P. Dobkin
 I used the aid of ai for certain parts of the code and  these part are mentioned in the code.(Calculating the oriented angle of two vectors and elastic collision)
+
 Rachik Hilal
+Worked on algorithm2: Barba and Langerman
