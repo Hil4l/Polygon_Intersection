@@ -299,6 +299,41 @@ function prune() {
   }
 }
 
+function lineSegmentIntersTest(a, b, c, d) {
+  let test1 = orientationDet(a, b, c) != orientationDet(a, b, d);
+  let test2 = orientationDet(c, d, a) != orientationDet(c, d, b);
+  return test1 && test2;
+}
+
+function polygonIntersecTest(P1, P2) {
+  // Brute force intersection test
+
+  let n = P1.length;
+  let m = P2.length;
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < m; j++) {
+      if (
+        lineSegmentIntersTest(P1[i], P1[(i + 1) % n], P2[j], P2[(j + 1) % m])
+      ) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+function testIntersecTpTq() {
+  if (polygonIntersecTest(Tp, Tq)) {
+    console.log("Tp and Tq intersect -> intersection invariant holds");
+  } else {
+    console.log(
+      "Tp and Tq dont intersect -> separation invariant still holding"
+    );
+  }
+}
+
 // ------------------------------------------------------
 
 function setup() {
@@ -336,10 +371,15 @@ function setup() {
   findLButton.position(30, 290);
   findLButton.mousePressed(findL);
 
-  // pruning steo
+  // pruning step
   findLButton = createButton("prune");
   findLButton.position(30, 340);
   findLButton.mousePressed(prune);
+
+  // step end test
+  findLButton = createButton("test");
+  findLButton.position(30, 390);
+  findLButton.mousePressed(testIntersecTpTq);
 }
 
 function draw() {
