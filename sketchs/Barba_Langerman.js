@@ -3,6 +3,7 @@
 /*
 Hilal Rachik 520550
 ----------------------
+usage:
 */
 
 class Point {
@@ -185,8 +186,6 @@ function defineTQ() {
 
 function defineTp() {
   let n = P.length;
-  // let chainLength = Math.ceil((n - 3) / 3);
-
   Tp = [P[0], P[Math.floor(n / 3)], P[Math.floor((2 * n) / 3)]];
 }
 
@@ -256,21 +255,37 @@ function prune() {
     return true;
   } else {
     // else find u and prune P keeping only vertices of c_v (v to u)
-    let v_Tp_ind = Tp.findIndex((p) => p.x === v.x && p.y === v.y);
-    let u_ind = (v_Tp_ind + 1) % 3;
-    if (orientationDet(L[0], L[1], Tp[u_ind]) == v_n_turn) {
-      u_ind = (v_Tp_ind + 2) % 3;
-    }
-    u = Tp[u_ind];
 
-    // build c_v
+    // u is next Tp vertex (anti clk wise) if v_n on same side as tq
+    // u is previous Tp vertex (anti clk wise) if v_n_p on same side as tq
+    let Tq_side_of_l = Math.sign(getTriangleSide(Tq, L[0], L[1]));
+    let v_Tp_ind = Tp.findIndex((p) => p.x === v.x && p.y === v.y);
     let c_v = [];
-    let i = v_ind;
-    while (P[i] != u) {
-      c_v.push(P[i]);
-      i = (i + 1) % n;
+
+    let u_ind = 0;
+    if (orientationDet(L[0], L[1], v_n_p) == Tq_side_of_l) {
+      u_ind = (v_Tp_ind + 2) % 3;
+      u = Tp[u_ind];
+
+      // build c_v (clk wise)
+      let i = v_ind;
+      while (P[i] != u) {
+        c_v.push(P[i]);
+        i = i != 0 ? i - 1 : n - 1;
+      }
+      c_v.push(u);
+    } else {
+      u_ind = (v_Tp_ind + 1) % 3;
+      u = Tp[u_ind];
+
+      // build c_v (anti clk wise)
+      let i = v_ind;
+      while (P[i] != u) {
+        c_v.push(P[i]);
+        i = (i + 1) % n;
+      }
+      c_v.push(u);
     }
-    c_v.push(u);
 
     // prune P
     P = c_v;
